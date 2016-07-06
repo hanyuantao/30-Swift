@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A15B4FDD1D2D5A6900A6A3FA /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15B4FDC1D2D5A6900A6A3FA /* VideoTableViewCell.xib */; };
+		A15B4FE11D2D610300A6A3FA /* demo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A15B4FE01D2D610300A6A3FA /* demo.mp4 */; };
 		A1BEBA2F1D295A77002B4D38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BEBA2E1D295A77002B4D38 /* AppDelegate.swift */; };
 		A1BEBA311D295A77002B4D38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1BEBA301D295A77002B4D38 /* Assets.xcassets */; };
 		A1BEBA341D295A77002B4D38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1BEBA321D295A77002B4D38 /* LaunchScreen.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A15B4FDC1D2D5A6900A6A3FA /* VideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
+		A15B4FE01D2D610300A6A3FA /* demo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.mp4; sourceTree = "<group>"; };
 		A1BEBA2B1D295A77002B4D38 /* TableDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1BEBA2E1D295A77002B4D38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1BEBA301D295A77002B4D38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				A1BEBA2E1D295A77002B4D38 /* AppDelegate.swift */,
 				A1BEBA3B1D295AC7002B4D38 /* MainViewController.swift */,
 				A1BEBA3D1D295EDC002B4D38 /* VideoTableViewCell.swift */,
+				A15B4FE01D2D610300A6A3FA /* demo.mp4 */,
+				A15B4FDC1D2D5A6900A6A3FA /* VideoTableViewCell.xib */,
 				A1BEBA301D295A77002B4D38 /* Assets.xcassets */,
 				A1BEBA321D295A77002B4D38 /* LaunchScreen.storyboard */,
 				A1BEBA351D295A77002B4D38 /* Info.plist */,
@@ -122,8 +128,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15B4FE11D2D610300A6A3FA /* demo.mp4 in Resources */,
 				A1BEBA311D295A77002B4D38 /* Assets.xcassets in Resources */,
 				A1BEBA341D295A77002B4D38 /* LaunchScreen.storyboard in Resources */,
+				A15B4FDD1D2D5A6900A6A3FA /* VideoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +286,7 @@
 				A1BEBA3A1D295A77002B4D38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

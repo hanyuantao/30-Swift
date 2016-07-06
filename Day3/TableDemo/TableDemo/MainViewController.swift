@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class MainViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
 
@@ -20,19 +22,21 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
         video(image: "videoScreenshot06", title: "Lijiang Lugu Lake", source: "Allen - 20:30")
     ]
  
-    
     let CellIdentifierClass = "VideoTableViewCell"
+    
+    
+    var playerViewController = AVPlayerViewController()
+    var playerView = AVPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.videoTable.frame = self.view.frame;
+        self.videoTable.frame = UIScreen.mainScreen().bounds;
+        self.view.addSubview(videoTable)
+        // Class 注册
+//        self.videoTable.registerClass(VideoTableViewCell.self, forCellReuseIdentifier: CellIdentifierClass)
+        self.videoTable.registerNib(UINib(nibName: "VideoTableViewCell", bundle: nil), forCellReuseIdentifier: CellIdentifierClass)
         self.videoTable.delegate = self;
         self.videoTable.dataSource = self;
-        self.view.addSubview(videoTable)
-        
-        // Class 注册
-        self.videoTable.registerClass(VideoTableViewCell.self, forCellReuseIdentifier: CellIdentifierClass)
-        
     }
     
     
@@ -41,9 +45,7 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 220
     }
@@ -57,18 +59,26 @@ class MainViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifierClass)
-        if cell == nil {
-            cell = VideoTableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: CellIdentifierClass) as VideoTableViewCell
-        }
+        let cell = self.videoTable.dequeueReusableCellWithIdentifier(CellIdentifierClass) as! VideoTableViewCell
         let videoObject = self.data[indexPath.row]
-        cell?.textLabel?.text = videoObject.title
-        cell?.detailTextLabel?.text = videoObject.source
-
-        return cell!
+        cell.updateCell(videoObject)
+        return cell
     }
     
-
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let path = NSBundle.mainBundle().pathForResource("demo", ofType: "mp4")
+        
+        playerView = AVPlayer(URL: NSURL(fileURLWithPath: path!))
+        
+        playerViewController.player = playerView
+        
+        self.presentViewController(playerViewController, animated: true) {
+            self.playerViewController.player?.play()
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
