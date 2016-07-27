@@ -36,6 +36,7 @@ class MainViewController: UIViewController {
         self.locationLab  = UILabel.init()
         self.locationLab.text = "This is my home"
         self.locationLab.textAlignment  = NSTextAlignment.Center
+        self.locationLab.textColor = UIColor.whiteColor()
         locationLab.backgroundColor = UIColor ( red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0 )
         self.locationLab.frame = CGRectMake(0, 0, self.view.frame.size.width-40, 80)
         self.locationLab.center = CGPointMake(self.view.center.x, 100)
