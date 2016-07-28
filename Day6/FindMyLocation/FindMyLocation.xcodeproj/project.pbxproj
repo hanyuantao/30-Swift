@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A175F0281D4A62320025CF2C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A175F0271D4A62320025CF2C /* CoreLocation.framework */; };
 		A1D072871D49024600A10071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D072861D49024600A10071 /* AppDelegate.swift */; };
 		A1D072891D49024600A10071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1D072881D49024600A10071 /* Assets.xcassets */; };
 		A1D0728C1D49024600A10071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D0728A1D49024600A10071 /* LaunchScreen.storyboard */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A175F0271D4A62320025CF2C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A1D072831D49024600A10071 /* FindMyLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D072861D49024600A10071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1D072881D49024600A10071 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -27,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A175F0281D4A62320025CF2C /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +39,7 @@
 		A1D0727A1D49024600A10071 = {
 			isa = PBXGroup;
 			children = (
+				A175F0271D4A62320025CF2C /* CoreLocation.framework */,
 				A1D072851D49024600A10071 /* FindMyLocation */,
 				A1D072841D49024600A10071 /* Products */,
 			);
@@ -274,6 +278,7 @@
 				A1D072921D49024600A10071 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import CoreLocation
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController,CLLocationManagerDelegate {
 
     var locationLab: UILabel = UILabel()
+    var locationManager : CLLocationManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupLayOut()
+        self.setupLayOut()
         
         // Do any additional setup after loading the view.
     }
@@ -42,16 +45,54 @@ class MainViewController: UIViewController {
         self.locationLab.center = CGPointMake(self.view.center.x, 100)
         visual.contentView.addSubview(self.locationLab)
         
-        let locationBtn: UIButton = UIButton.init(frame: CGRectMake(0, 0, 150, 40))
+        let locationBtn: UIButton = UIButton.init(frame: CGRectMake(0, 0, 245, 59))
         locationBtn.center  = CGPointMake(self.view.center.x, self.view.frame.height - 100)
-        locationBtn.backgroundColor = UIColor ( red: 0.0, green: 0.251, blue: 0.502, alpha: 1.0 )
-        locationBtn.layer.masksToBounds = true
-        locationBtn.layer.cornerRadius = 20
-        locationBtn.setTitle("Find Me", forState: UIControlState.Normal)
-        visual.contentView.addSubview(locationBtn)
+        locationBtn.setBackgroundImage(UIImage.init(named: "Find my location"), forState: UIControlState.Normal)
+        locationBtn.setTitle("开始定位", forState: UIControlState.Normal)
         
+        locationBtn.addTarget(self, action: #selector(MainViewController.buttonTapped(_:)), forControlEvents: .TouchUpInside)
+        
+        self.view.addSubview(locationBtn)
+
     }
 
+    func buttonTapped(sender: UIButton) {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        CLGeocoder().reverseGeocodeLocation(manager.location!) { (placemarks, error) in
+            if (error != nil) {
+                self.locationLab.text = "Reverse geocoder failed with error" + error!.localizedDescription
+                return
+            }
+            if placemarks!.count > 0 {
+                let pm = placemarks![0]
+                self.showDetailLocation(pm)
+                
+            }
+        }
+    }
+    
+    func showDetailLocation(pm:CLPlacemark?){
+        if let placemark = pm {
+            let address = (placemark.addressDictionary!["Name"] != nil) ? placemark.addressDictionary!["Name"] : ""
+//            let locality = (placemark.locality != nil) ? placemark.locality : ""
+//            let postalCode =  (placemark.postalCode != nil) ? placemark.postalCode : ""
+//            let administrativeArea = (placemark.administrativeArea != nil) ? placemark.administrativeArea : ""
+//            let country = (placemark.country != nil) ? placemark.country : ""
+            
+            self.locationLab.text = (address! as! String)
+
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
