@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.timeLab.text = "0.00"
+        self.view.backgroundColor = UIColor.black
     }
     
     
