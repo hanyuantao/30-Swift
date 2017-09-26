@@ -14,17 +14,63 @@ class ViewController: UIViewController {
     @IBOutlet weak var pauseBtn:UIButton!
     @IBOutlet weak var timeLab:UILabel!
     
+    var count = 0.00
+    var timer = Timer()
+    var isPlaying = false
+    
     override var preferredStatusBarStyle: UIStatusBarStyle{
         get{
             return UIStatusBarStyle.lightContent
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.timeLab.text = "0.00"
+        self.timeLab.text = String(count)
         self.view.backgroundColor = UIColor.black
+        
+        self.playBtn.addTarget(self, action: #selector(playTimer(sender:)), for: UIControlEvents.touchUpInside)
+        
+        
     }
+    
+    @objc func playTimer(sender:AnyObject) {
+        if isPlaying {
+            return
+        }
+        
+        playBtn.isEnabled = false
+        pauseBtn.isEnabled = true
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer:Timer) in
+            print("*****")
+        })
+        timer.fire()
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     override func didReceiveMemoryWarning() {
