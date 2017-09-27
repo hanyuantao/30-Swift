@@ -35,6 +35,9 @@
                                         <state key="normal" title="Reset">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="resetWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tgc-bv-Yhk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.03504447266459465" green="0.0055788806639611721" blue="0.13919386267662048" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,6 +62,9 @@
                                             <constraint firstAttribute="width" constant="48" id="mwh-Ug-5tp"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="play"/>
+                                        <connections>
+                                            <action selector="playTimerWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W7p-Jo-mFi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.32230335474014282" green="0.35659265518188477" blue="0.98649674654006958" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,6 +83,9 @@
                                             <constraint firstAttribute="width" constant="42" id="yi8-pS-RIo"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="pause"/>
+                                        <connections>
+                                            <action selector="pauseTimerWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CzI-Ao-4UB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40006488561630249" green="0.74141150712966919" blue="0.039835408329963684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

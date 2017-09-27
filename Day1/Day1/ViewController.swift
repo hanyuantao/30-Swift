@@ -29,12 +29,12 @@ class ViewController: UIViewController {
         self.timeLab.text = String(count)
         self.view.backgroundColor = UIColor.black
         
-        self.playBtn.addTarget(self, action: #selector(playTimer(sender:)), for: UIControlEvents.touchUpInside)
+//        self.playBtn.addTarget(self, action: #selector(playTimer(sender:)), for: UIControlEvents.touchUpInside)
         
         
     }
     
-    @objc func playTimer(sender:AnyObject) {
+    @IBAction func playTimer(sender:AnyObject) {
         if isPlaying {
             return
         }
@@ -42,34 +42,28 @@ class ViewController: UIViewController {
         playBtn.isEnabled = false
         pauseBtn.isEnabled = true
         
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer:Timer) in
-            print("*****")
+        //非主线程不能使用 Timer.scheduledTimer进行初始化
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timers) in
+            self.count += 0.1
+            self.timeLab.text = String(self.count)
         })
-        timer.fire()
-        
     }
     
+    @IBAction func pauseTimer(sender: AnyObject){
+        playBtn.isEnabled = true
+        pauseBtn.isEnabled = false
+        timer.invalidate()
+        isPlaying = false
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    @IBAction func reset(sender:AnyObject){
+        playBtn.isEnabled = true
+        pauseBtn.isEnabled = true
+        timer.invalidate()
+        isPlaying = false
+        count = 0.0
+        timeLab.text = String(count)
+    }
     
     
     
