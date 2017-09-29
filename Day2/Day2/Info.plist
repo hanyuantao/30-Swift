@@ -41,5 +41,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>RussellObliqueStd</string>
+		<string>RotisSansSerifStd-Light</string>
+		<string>SerifGothicStd-Light</string>
+		<string>RuzickaFreehandLTStd-Roman</string>
+	</array>
 </dict>
 </plist>

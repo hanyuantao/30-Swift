@@ -52,7 +52,6 @@
 		A1C078871F7BF91E00CBD48F /* RuzickaFreehandLTStd-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RuzickaFreehandLTStd-Roman.otf"; sourceTree = "<group>"; };
 		A1C078881F7BF93300CBD48F /* SerifGothicStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SerifGothicStd-Light.otf"; sourceTree = "<group>"; };
 		A1C078891F7BF94500CBD48F /* RotisSansSerifStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RotisSansSerifStd-Light.otf"; sourceTree = "<group>"; };
-		A1C0788A1F7BF95200CBD48F /* RulingScriptLTStd-2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RulingScriptLTStd-2.otf"; sourceTree = "<group>"; };
 		A1C0788C1F7BF96C00CBD48F /* RussellObliqueStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = RussellObliqueStd.otf; path = "../../../../../设计/RussellObliqueStd.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				A1C0788C1F7BF96C00CBD48F /* RussellObliqueStd.otf */,
-				A1C0788A1F7BF95200CBD48F /* RulingScriptLTStd-2.otf */,
 				A1C078891F7BF94500CBD48F /* RotisSansSerifStd-Light.otf */,
 				A1C078881F7BF93300CBD48F /* SerifGothicStd-Light.otf */,
 				A1C078871F7BF91E00CBD48F /* RuzickaFreehandLTStd-Roman.otf */,
