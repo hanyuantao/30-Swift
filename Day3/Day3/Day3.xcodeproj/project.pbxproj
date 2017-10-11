@@ -24,7 +24,7 @@
 		A12E21D01F8BCC2600DFFADB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A12E21D31F8BCC2600DFFADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A12E21D51F8BCC2600DFFADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A12E21DB1F8BD10900DFFADB /* emoji zone.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "emoji zone.mp4"; sourceTree = "<group>"; };
+		A12E21DB1F8BD10900DFFADB /* emojizone.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = emojizone.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 				A12E21CB1F8BCC2600DFFADB /* ViewController.swift */,
 				A11162661F8D223500862A24 /* VideoTableViewCell.swift */,
 				A12E21CD1F8BCC2600DFFADB /* Main.storyboard */,
-				A12E21DB1F8BD10900DFFADB /* emoji zone.mp4 */,
+				A12E21DB1F8BD10900DFFADB /* emojizone.mp4 */,
 				A12E21D01F8BCC2600DFFADB /* Assets.xcassets */,
 				A12E21D21F8BCC2600DFFADB /* LaunchScreen.storyboard */,
 				A12E21D51F8BCC2600DFFADB /* Info.plist */,

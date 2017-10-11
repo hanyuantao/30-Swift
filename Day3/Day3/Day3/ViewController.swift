@@ -28,6 +28,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         Video(name: "Madrid Athlete", file: "The Madrid Athlete team", time: "3:00"),
     ]
     
+    var playerCotroller = AVPlayerViewController()
+    var player = AVPlayer()
+    
     override func viewDidLoad() {
         videoTableView.frame = self.view.frame
         super.viewDidLoad()
@@ -54,10 +57,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         let cell:VideoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell", for: indexPath) as! VideoTableViewCell
         let video = videoList[indexPath.row]
         cell.videoTimeLabel?.text = video.name
-        
-        cell.videoImage?.image = UIImage.init(named: "videoScreenshot\(indexPath.row+1)")
-        
-        cell.backgroundColor = UIColor.blue
+        cell.videoImage?.image = UIImage(named: "videoScreenshot0\(indexPath.row+1)")
         return cell
     }
     
@@ -65,11 +65,17 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         return 200
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let path = Bundle.main.path(forResource: "emojizone", ofType: "mp4")
+        player = AVPlayer(url: URL(fileURLWithPath: "emojizone.mp4"))
+        playerCotroller.player = player
+        self.present(playerCotroller, animated: true) {
+            
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-

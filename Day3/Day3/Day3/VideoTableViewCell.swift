@@ -19,12 +19,18 @@ class VideoTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        videoImage = UIImageView.init(frame: self.frame)
+        videoImage = UIImageView()
+        videoImage?.image = UIImage(named: "videoScreenshot01")
         self.contentView.addSubview(videoImage!)
-       videoImage?.image = UIImage.init(named: "videoScreenshot01")
-        
-        self.videoTimeLabel = UILabel.init(frame: CGRect.init(origin: CGPoint.init(x: 0, y: self.frame.size.width-40), size: CGSize.init(width: self.frame.size.width, height: 40)))
+
+        self.videoTimeLabel = UILabel()
         self.contentView.addSubview(self.videoTimeLabel!)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.videoImage?.frame = CGRect(x:0.0, y:0.0, width:self.contentView.frame.size.width,height:self.contentView.frame.size.height)
+        self.videoTimeLabel?.frame = CGRect.init(origin: CGPoint.init(x: 0, y: self.contentView.frame.size.height-40), size: CGSize.init(width: self.contentView.frame.size.width, height: 40))
     }
 
     required init?(coder aDecoder: NSCoder) {
