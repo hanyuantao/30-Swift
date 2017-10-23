@@ -66,11 +66,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let path = Bundle.main.path(forResource: "emojizone", ofType: "mp4")
-        player = AVPlayer(url: URL(fileURLWithPath: "emojizone.mp4"))
+        let file = Bundle.main.path(forResource: "emojizone", ofType: "mp4")
+        player = AVPlayer(url: URL(fileURLWithPath: file!))
         playerCotroller.player = player
         self.present(playerCotroller, animated: true) {
-            
         }
     }
     
