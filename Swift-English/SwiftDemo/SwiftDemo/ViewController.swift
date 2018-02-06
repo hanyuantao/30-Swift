@@ -29,11 +29,10 @@ class ViewController: UIViewController {
 //        optionChaining()
 //        enumDemo();
 //        structDemo();
+//        propertyDemo()
+//        staticDemo();
+//        accessDemo()
         
-        var team = Team(name: "FCB")
-        team.name = "FFF"
-        print(team.score);
-
         
     }
     
@@ -314,13 +313,53 @@ class ViewController: UIViewController {
         }
         
         //Computed properties
-        
+        var totalScore:Int{
+            set{
+                totalScore = score + 1;
+            }
+            get{
+                return score+1;
+            }
+        }
         
         func showTeam(msg:String){
             print("msg = \(msg)")
         }
     }
     
+    func propertyDemo(){
+        var team = Team(name: "FCB")
+        team.name = "FFF"
+        print(team.score);
+        print(team.totalScore);
+    }
+    
+//    Static properties and methods
+    struct StaticStruct {
+        static var favoriteSont = "Star"
+        var name:String
+        var age:Int
+    }
+    
+    func staticDemo(){
+        let fan = StaticStruct(name: "James", age: 25)
+        print(fan.name);
+        print(StaticStruct.favoriteSont);
+    }
+    
+//    Access control
+    class AceessClass {
+        var age:String;
+        private var name:String;
+        init(age:String , name:String) {
+            self.age = age;
+            self.name = name;
+        }
+    }
+    func accessDemo(){
+        var staticClass = AceessClass(age: "111", name: "Z>H")
+        print(staticClass.age);
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
