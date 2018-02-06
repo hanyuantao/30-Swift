@@ -10,19 +10,45 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    enum WeatherType {
+        case sun
+        case cloud
+        case rain
+        case wind(speed:Int)
+        case snow
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+//        basicDemo();
+//        swithDemo();
+//        methodsDemo();
+//        optionChaining()
+//        enumDemo();
+//        structDemo();
+        
+        var team = Team(name: "FCB")
+        team.name = "FFF"
+        print(team.score);
+
+        
+    }
+    
+    //基础语法
+    func basicDemo() -> Void {
         //Variable  & Constants
         var name = "Z.H"
         name  = "Once"
         let sex = "男"
-       
+        
         var names: String
         names = "H.Z"
         
         var zhidao = "Good"
-
+        
         
         //Type of Data
         var latitude: Double
@@ -60,7 +86,7 @@ class ViewController: UIViewController {
         print(type(of: songs));
         
         
-//        Dictionary
+        //        Dictionary
         var person = ["first": "Taylor", "middle": "Alison", "last": "Swift", "month": "December", "website": "taylorswift.com"]
         print(person["first"]);
         
@@ -74,8 +100,8 @@ class ViewController: UIViewController {
         
         book["day4"] = "Scola"
         print(book);
-   
-//        Conditional statements
+        
+        //        Conditional statements
         var action: String
         var person1 = "hater"
         
@@ -85,7 +111,7 @@ class ViewController: UIViewController {
             print("word")
         }
         
-       //Loop
+        //Loop
         for i in 1...10{
             print("1 x 10 is \(i * 10)")
         }
@@ -113,8 +139,8 @@ class ViewController: UIViewController {
             
             print(str)
         }
-
-//        While loops
+        
+        //        While loops
         
         var counter = 0
         while true {
@@ -134,52 +160,171 @@ class ViewController: UIViewController {
             }
             print("My favorite song is \(song)")
         }
-        
-    
     }
+    
+    //swich语法
+    func swithDemo() {
+        
+        let liveAlbums = 5;
+        
+        switch liveAlbums {
+        case 0...1:
+            print("Youre just starting out");
+        case 2...3:
+            print("Youre just starting out1");
+        case 4...5:
+            print("Youre just starting out2");
+        default:
+            print("Youre just starting out default");
+        }
+    }
+    
+    //方法语法
+    func methodsDemo(){
+        let funcClass = FucntionClass()
+        let name =  funcClass.createFunction(name: "Print Nmae")
+        print(name);
+        
+        funcClass.showPerson(name: "Z.H", age: 32, height: 170)
+        funcClass.countLettersInString(myString: "Good")
+        funcClass.countLettersInString("SSS")
+        funcClass.counterLetters(in: "DDDDD")
+        print(funcClass.getHaterStatus() ?? "Game over");
+        
+        var status: String?
+        status = funcClass.getHaterStatus(weather: "rainy")
+        print(status ?? "Donedone");
+        
+        if let haterStatus = funcClass.getHaterStatus(weather: "rainy") {
+            funcClass.takeHaterAction(status: haterStatus)
+        }
+        
+        let items = ["James", "John", "Sally"]
+        let jamesPisition = funcClass.position(of: "John", in: items);
+        print(jamesPisition);
+        
+        print(items.index(of: "John") ?? "ddd")
+        
+    }
+    
+    func optionChaining(){
+       
+        func albumReleased(year: Int) -> String? {
+            switch year {
+            case 2006: return "Taylor Swift"
+            case 2008: return "Fearless"
+            case 2010: return "Speak Now"
+            case 2012: return "Red"
+            case 2014: return "1989"
+            default: return nil
+            }
+        }
+        let album = albumReleased(year: 2006)?.uppercased()
+        print("The album is \(String(describing: album))")
+        
+    }
+    
+    //enum
+    func enumDemo(){
+        
+        //Enum
+        print([WeatherType.sun, WeatherType.wind]);
+        let weather = WeatherType.snow
+        
+    }
+    
+    //Struct
+    struct Person {
+        var name:String
+        var age:Int
+        
+        
+        func discription(){
+            print("The man \(name) he's age is \(age)")
+        }
+        
+    }
+    func structDemo() {
+        var person = Person(name: "Z.H", age: 30)
+        print([person.name, person.age])
+        var anotherPerson = person;//复制独立的一份
+        anotherPerson.name = "ONCE"
+        print(anotherPerson, person);
+        anotherPerson.discription()
+    }
+   
+    //Class
+    class PersonClass {
+        var clothes: String
+        var shoes: String
+        
+        //不需要 Func
+        init(clothes:String, shoes:String) {
+            self.clothes = clothes;
+            self.shoes = shoes;
+        }
+        
+        func discription(){
+            print("PersonClass")
+        }
+        
+    }
+   
+    class Doctor: PersonClass {
+        override func discription() {
+            print("Doctor");
+        }
+    }
+    
+    class Singer: PersonClass {
+        var name: String
+        var age: Int
+        
+        init(clothes:String, name: String, age: Int, shoes:String) {
+        
+            self.name = name
+            self.age = age
+            
+            super.init(clothes: clothes, shoes: shoes)
+            
+        }
+        
+        func sing() {
+            print("La la la la")
+        }
+        
+    }
+    
+    //Property
+    struct Team {
+        //属性观察
+        var name:String{
+            willSet {
+                showTeam(msg: "I'm changing from \(name) to \(newValue)")
+            }
+            didSet {
+                showTeam(msg: "I just changed from \(oldValue) to \(name)")
+            }
+        }
+        
+        var score:Int{
+            get{
+                return 1024
+            }
+        }
+        
+        //Computed properties
+        
+        
+        func showTeam(msg:String){
+            print("msg = \(msg)")
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
