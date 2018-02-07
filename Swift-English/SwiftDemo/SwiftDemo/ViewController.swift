@@ -32,7 +32,8 @@ class ViewController: UIViewController {
 //        propertyDemo()
 //        staticDemo();
 //        accessDemo()
-        
+//        polymorphismDemo()
+        closuresDemo()
         
     }
     
@@ -359,6 +360,79 @@ class ViewController: UIViewController {
     func accessDemo(){
         var staticClass = AceessClass(age: "111", name: "Z>H")
         print(staticClass.age);
+    }
+    
+    
+//    Polymorphism and typecasting
+    
+    class Album {
+        var name: String
+        
+        init(name: String) {
+            self.name = name
+        }
+        
+        func getPerformance() -> String {
+            return "The album \(name) sold lots";
+        }
+        
+    }
+ 
+    class StudioAlbum: Album {
+        var studio: String
+        
+        init(name: String, studio: String) {
+            self.studio = studio
+            super.init(name: name)
+        }
+        
+        override func getPerformance() -> String {
+            return "The studio album \(name) sold out";
+        }
+    }
+   
+    class LiveAlbum: Album {
+        var location: String
+        
+        init(name: String, location: String) {
+            self.location = location
+            super.init(name: name)
+        }
+        
+        override func getPerformance() -> String {
+            return "The live album \(name) sold lots"
+        }
+    }
+    func polymorphismDemo(){
+        let taylorSwift = StudioAlbum(name: "Taylor Swift", studio: "The Castles Studios")
+        let fearless = StudioAlbum(name: "Speak Now", studio: "Aimeeland Studio")
+        let iTunesLive = LiveAlbum(name: "iTunes Live from SoHo", location: "New York")
+        let albums:[Album] = [taylorSwift, fearless, iTunesLive];
+        
+        for album in albums {
+            print(album.getPerformance())
+            if let studioAlbum = album as? StudioAlbum{
+                print(studioAlbum.studio)
+            }else if let liveAlbum = album as? LiveAlbum{
+                print(liveAlbum.location);
+            }
+        }
+//        Converting common types with initializers
+        let number = 1024
+//        print(number as? String)
+        print(String(number))
+        
+    }
+    
+    //Closures
+    func closuresDemo(){
+        let vw = UIView()
+        UIView.animate(withDuration: 1.0) {
+            vw.alpha = 0.0;
+        }
+        UIWindow.animate(withDuration: 1.0){
+            vw.alpha = 1.0;
+        }
     }
     
     override func didReceiveMemoryWarning() {

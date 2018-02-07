@@ -1,9 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
-use_frameworks!
-
-
-target 'Day4' do
-  pod 'SnapKit', '~> 4.0.0'
-#  pod 'SwiftyJSON', '~> 2.3'
-end
