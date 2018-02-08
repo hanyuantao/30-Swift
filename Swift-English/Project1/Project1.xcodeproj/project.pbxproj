@@ -16,7 +16,7 @@
 		184478A5202AF6C900F4CFCC /* once_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 184478A0202AF6C800F4CFCC /* once_1.png */; };
 		184478A6202AF6C900F4CFCC /* once_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 184478A1202AF6C800F4CFCC /* once_2.png */; };
 		184478A7202AF6C900F4CFCC /* once_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 184478A2202AF6C800F4CFCC /* once_3.png */; };
-		184478A8202AF6C900F4CFCC /* once_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 184478A3202AF6C800F4CFCC /* once_4.png */; };
+		18752A1B202BE78B0070C88B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18752A1A202BE78B0070C88B /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		184478A0202AF6C800F4CFCC /* once_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = once_1.png; sourceTree = "<group>"; };
 		184478A1202AF6C800F4CFCC /* once_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = once_2.png; sourceTree = "<group>"; };
 		184478A2202AF6C800F4CFCC /* once_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = once_3.png; sourceTree = "<group>"; };
-		184478A3202AF6C800F4CFCC /* once_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = once_4.png; sourceTree = "<group>"; };
+		18752A1A202BE78B0070C88B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +66,7 @@
 			children = (
 				18447887202AACAC00F4CFCC /* AppDelegate.swift */,
 				18447889202AACAC00F4CFCC /* ViewController.swift */,
+				18752A1A202BE78B0070C88B /* DetailViewController.swift */,
 				1844788B202AACAC00F4CFCC /* Main.storyboard */,
 				1844788E202AACAC00F4CFCC /* Assets.xcassets */,
 				18447890202AACAC00F4CFCC /* LaunchScreen.storyboard */,
@@ -74,7 +75,6 @@
 				184478A0202AF6C800F4CFCC /* once_1.png */,
 				184478A1202AF6C800F4CFCC /* once_2.png */,
 				184478A2202AF6C800F4CFCC /* once_3.png */,
-				184478A3202AF6C800F4CFCC /* once_4.png */,
 			);
 			path = Project1;
 			sourceTree = "<group>";
@@ -143,7 +143,6 @@
 				1844788F202AACAC00F4CFCC /* Assets.xcassets in Resources */,
 				184478A5202AF6C900F4CFCC /* once_1.png in Resources */,
 				1844788D202AACAC00F4CFCC /* Main.storyboard in Resources */,
-				184478A8202AF6C900F4CFCC /* once_4.png in Resources */,
 				184478A7202AF6C900F4CFCC /* once_3.png in Resources */,
 				184478A6202AF6C900F4CFCC /* once_2.png in Resources */,
 			);
@@ -156,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18752A1B202BE78B0070C88B /* DetailViewController.swift in Sources */,
 				1844788A202AACAC00F4CFCC /* ViewController.swift in Sources */,
 				18447888202AACAC00F4CFCC /* AppDelegate.swift in Sources */,
 			);
