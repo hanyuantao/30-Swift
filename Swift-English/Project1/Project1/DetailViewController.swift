@@ -24,8 +24,17 @@ class DetailViewController: UIViewController {
         }
         
         navigationItem.largeTitleDisplayMode = .never
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(share));
         
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func share(){
+        let vc = UIActivityViewController(activityItems: [detailImageView.image!], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem;
+        present(vc, animated: true) {
+            
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
