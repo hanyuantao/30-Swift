@@ -40,10 +40,8 @@ class ViewController: UITableViewController {
             showError()
         }
 
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    
     func parse(json:JSON){
         for result in json["results"].arrayValue {
             let title = result["title"].stringValue;
