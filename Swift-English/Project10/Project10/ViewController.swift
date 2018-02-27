@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class ViewController: UICollectionViewController,UIImagePickerControllerDelegate,UINavigationBarDelegate {
+class ViewController: UICollectionViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
    
     var people = [Person]()
     let pictureVC = UIImagePickerController()
@@ -23,9 +23,7 @@ class ViewController: UICollectionViewController,UIImagePickerControllerDelegate
         
         pictureVC.allowsEditing = true
         pictureVC.sourceType = .photoLibrary
-
-        pictureVC.delegate = self as? (UIImagePickerControllerDelegate & UINavigationControllerDelegate)
-
+        pictureVC.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
         
     }
@@ -87,7 +85,6 @@ class ViewController: UICollectionViewController,UIImagePickerControllerDelegate
         
         if let jpegData = UIImageJPEGRepresentation(image, 80) {
             try? jpegData.write(to: imagePath)
-            
         }
         
         let person = Person(name: "Unknown", image: imageName)
@@ -97,11 +94,7 @@ class ViewController: UICollectionViewController,UIImagePickerControllerDelegate
         dismiss(animated: true, completion: nil)
     }
     
-    
-    
 
-
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return people.count
     }
@@ -123,28 +116,21 @@ class ViewController: UICollectionViewController,UIImagePickerControllerDelegate
         return cell
     }
     
-    
-
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let person = people[indexPath.item]
+        let alertVC = UIAlertController(title: "RenamePerson", message: nil, preferredStyle: .alert)
+        alertVC.addTextField()
+        alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (alertVC) in
+            
+        }))
+        
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self,alertVC] _ in
+            let newName = alertVC.textFields![0]
+            person.name = newName.text!
+            self.collectionView?.reloadData()
+        }))
+        
+        present(alertVC, animated: true)
+        
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
