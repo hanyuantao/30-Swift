@@ -31,12 +31,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NoG-P5-R91" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1Xr-3q-x9r"/>
-                            <constraint firstItem="NoG-P5-R91" firstAttribute="centerX" secondItem="04O-xV-kXU" secondAttribute="centerX" id="4Ya-2v-d5z"/>
-                            <constraint firstAttribute="bottom" secondItem="04O-xV-kXU" secondAttribute="bottom" constant="20" symbolic="YES" id="NCP-3M-qEo"/>
-                            <constraint firstItem="NoG-P5-R91" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YkM-I8-0dq"/>
-                            <constraint firstItem="NoG-P5-R91" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="b5w-ob-0pM"/>
-                            <constraint firstAttribute="trailing" secondItem="NoG-P5-R91" secondAttribute="trailing" id="bBe-Tl-3Kb"/>
+                            <constraint firstItem="04O-xV-kXU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="73N-eW-ZN8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NoG-P5-R91" secondAttribute="bottom" id="Kew-Or-NzB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NoG-P5-R91" secondAttribute="trailing" id="cEb-ob-WOc"/>
+                            <constraint firstItem="NoG-P5-R91" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eQO-10-ge8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="NoG-P5-R91" secondAttribute="top" constant="20" id="iJq-nG-XEm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="04O-xV-kXU" secondAttribute="bottom" constant="20" id="jkO-uf-IRL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
